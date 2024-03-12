@@ -12,8 +12,13 @@ public class HotelSystem {
         DBFunctions hotel_db = null;
 
         try {
+            String databaseName = args[0];
+            String portNumber = args[1];
+            String userName = args[2];
+            String password = args[3];
+
             hotel_db = new DBFunctions();
-            hotel_db.connect_to_db("hotel", "5432", "jgard046", "UCR2023");
+            hotel_db.connect_to_db(databaseName, portNumber, userName, password);
 
             boolean exit = false;
             while (!exit) {
